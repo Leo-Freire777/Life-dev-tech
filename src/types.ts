@@ -16,13 +16,27 @@ export interface Service {
   id: string;
   slug: string;
   title: string;
+  short_description: string;
   description: string;
   content: string;
   image_url?: string;
   status: ContentStatus;
   category?: string;
-  price?: number;
+  price_range?: string;
   created_at: string;
+}
+
+export interface BlogPost {
+  id: string;
+  slug: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  cover_image: string;
+  author: string;
+  published_at: string;
+  status: ContentStatus;
+  category: string;
 }
 
 export interface Lead {
@@ -30,6 +44,9 @@ export interface Lead {
   full_name: string;
   email: string;
   phone?: string;
+  company?: string;
+  project_type?: string;
+  budget_range?: string;
   message?: string;
   status: LeadStatus;
   source?: string;
